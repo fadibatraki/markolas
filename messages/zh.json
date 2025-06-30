@@ -1,0 +1,171 @@
+{
+  "Pagination": {
+    "Previous": "上一页",
+    "Next": "下一页"
+  },
+  "Header": {
+    "home": "首页",
+    "products": "产品",
+    "searchProducts": "搜索商品..."
+  },
+  "HomePage": {
+    "featuredProducts": "精选产品",
+    "viewAll": "查看全部"
+  },
+  "Product": {
+    "featured": "推荐",
+    "addToCart": "加入购物车",
+    "added": "已添加"
+  },
+  "ProductsPage": {
+    "allProducts": "全部产品",
+    "loadingProducts": "加载产品中..."
+  },
+  "ProductDetails": {
+    "backToProducts": "返回产品列表",
+    "aboutThisProduct": "关于此产品",
+    "saveForLater": "稍后购买",
+    "signupForNotification": "登记以便在此商品补货时接收通知。",
+    "notifyMe": "通知我",
+    "freeShipping": "免运费",
+    "onOrdersOver50": "订单满50美元即可享受",
+    "twoHundred": "2年保修",
+    "fullCoverage": "全面保障",
+    "featured": "精选",
+    "available": "件"
+  },
+  "CartPage": {
+    "loadingCart": "加载购物车中...",
+    "yourCart": "您的购物车",
+    "cartIsEmpty": "购物车为空",
+    "clearCart": "清空购物车",
+    "continueShopping": "继续购物",
+    "orderSummary": "订单摘要",
+    "subtotal": "小计",
+    "shipping": "运费",
+    "total": "总计",
+    "free": "免费",
+    "proceedToCheckout": "前往结算"
+  },
+  "ProductFilter": {
+    "filters": "筛选条件",
+    "searchProducts": "搜索商品...",
+    "selectCategories": "选择分类...",
+    "noProductsFound": "未找到商品",
+    "categories": "分类",
+    "searchCategories": "搜索分类...",
+    "noCategoriesFound": "未找到分类",
+ 
+    "applyFilters": "应用筛选",
+    "resetFilters": "重置筛选"
+  },
+  "AboutUs": {
+    "companyName": "Oukra",
+    "title": "关于我们",
+    "subtitle": "Oukra公司开创性空调与制冷解决方案 \"构建更舒适、可持续的未来\"",
+    "vision": {
+      "title": "我们的愿景",
+      "description": "提供创新、可持续的气候控制解决方案，超越客户期望"
+    },
+    "whyChoose": {
+      "title": "为什么选择Oukra?",
+      "points": [
+        "- 10年以上专业经验：自2013年以来的可信赖解决方案",
+        "- 强大的分销网络：可靠的本地和国际物流",
+        "- 24/7支持：售后服务和专业技术支持",
+        "- 认证品质"
+      ]
+    },
+    "operations": {
+      "title": "我们的运营",
+      "description": "本地与全球 ✔ 覆盖世界各地"
+    },
+    "expertise": {
+      "title": "我们的专长",
+      "section1": {
+        "title": "先进制冷系统:",
+        "points": [
+          "- 中央空调和管道空调机组",
+          "- 商业和工业制冷解决方案"
+        ]
+      },
+      "section2": {
+        "title": "优质备件:",
+        "points": [
+          "- 进口高质量制冷组件",
+          "- 端到端的技术支持和维护"
+        ]
+      }
+    }
+  },
+  "CTA": {
+    "companyName": "欧科公司",
+    "title": "联系我们",
+    "subtitle": "欧科成立于2013年，是尖端空调与制冷系统的领先进出口商。我们于2015年获得商业商标权，这巩固了我们对*品质、可靠性和创新*的承诺。品质、可靠性和创新"
+  },
+  "About": {
+    "title": "我们将科技呈现为一种艺术",
+    "subtitle": "关于我们：",
+    "subtitle1": "深圳优科电子有限公司专注于电气元件、亚克力板及其他相关产品的研发、制造与出口贸易，业务遍及全球。",
+    "subtitle2": "自公司成立以来，我们的专业团队始终致力于不断提升自我并拓展市场。",
+    "subtitle3": "我们重视建立健全的内部质量保证体系，并积极获取各类质量认证，确保客户获得优质产品。 多年来，我们与众多客户建立了稳固的贸易合作关系。",
+     "button": "  了解更多 "
+  },
+  "Footer": {
+   "subtitle": "通过我们自己的研发，我们致力于制造亚克力框架、连接器、铜制零件和PCBa等，并出口到全球各地。",
+    "address": "地址",
+     "address1": "中国深圳市龙岗区康正路48号莲塘工业园4栋309室",
+    "info": "信息",
+    "latestBlog": "最新博客",
+    "links": {
+      "home": "首页",
+      "products": "产品",
+      "about": "关于我们",
+      "contact": "联系我们"
+    }
+  },
+
+   "Hero": {
+    "title1": " 在 Ukko，我们呈现",
+    "title2": "技术",
+    "title3": " 作为一种",
+    "title4": "艺术",
+    "subtitle": "我们的目标是成为从零到一打造产品旅程的一部分",
+    "contactus":"   联系我们",
+    "aboutus":"    关于我们"
+  }
+  ,
+
+   "Services": {
+  "title1": "Ukko",
+  "title2": "我们的服务",
+  "title3": "我们致力于从零开始提供产品旅程。"
+
+},
+ "ServiceContent": {
+      "item1": {
+        "name": "以用户为中心的设计",
+        "designation": "创始人 @ 劳力士",
+        "content": "我们优先考虑以用户为中心的设计，确保设计流程由用户的需求和偏好主导。这种方法包括了解用户需求、进行深入研究，并持续集成反馈，从而打造既实用又优化的用户体验产品。"
+      },
+      "item2": {
+        "name": "客户产品开发",
+        "designation": "创始人 @ UI Hunter",
+        "content": "UKKO-CO 致力于打造出色的产品，这种承诺源于其最先进的实验室。其专业团队对现有产品进行严格评估，找出其优势和改进空间。"
+      },
+      "item3": {
+        "name": "提供免费试用样品",
+        "designation": "创始人 @ Trorex",
+        "content": "我们在每一款产品中体现无与伦比的卓越。除了强调产品质量，我们还通过提供免费样品，让潜在客户亲身体验其卓越标准，涵盖护肤品、膳食补充剂等多种产品。"
+      }
+    }
+    ,
+    "CatalogSection": {
+    "brand": "Oukra",
+    "title": "精选目录",
+    "description": "我们以质量为首要任务，致力于为您提供经得起时间考验的优质产品。"
+  }
+
+
+
+}

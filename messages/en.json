@@ -1,0 +1,167 @@
+{
+  "Pagination": {
+    "Previous": "Previous",
+    "Next": "Next"
+  },
+  "Header": {
+    "home": "Home",
+    "products": "Products",
+    "searchProducts": "Search products..."
+  },
+  "HomePage": {
+    "featuredProducts": "Featured Products",
+    "viewAll": "View All"
+  },
+  "Product": {
+    "featured": "Featured",
+    "addToCart": "Add to Cart",
+    "added": "Added"
+  },
+  "ProductsPage": {
+    "allProducts": "All Products",
+    "loadingProducts": "Loading products..."
+  },
+  "ProductDetails": {
+    "backToProducts": "Back to Products",
+    "aboutThisProduct": "About this product",
+    "saveForLater": "Save for Later",
+    "signupForNotification": "Sign up for notifications when this item becomes available again.",
+    "notifyMe": "Notify Me",
+    "freeShipping": "Free Shipping",
+    "onOrdersOver50": "On orders over $50",
+    "twoHundred": "2-Year Warranty",
+    "fullCoverage": "Full coverage",
+    "featured": "Featured",
+    "available": "available"
+  },
+  "CartPage": {
+    "loadingCart": "Loading cart...",
+    "yourCart": "Your Cart",
+    "cartIsEmpty": "Your cart is empty",
+    "clearCart": "Clear Cart",
+    "continueShopping": "Continue Shopping",
+    "orderSummary": "Order Summary",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "total": "Total",
+    "free": "Free",
+    "proceedToCheckout": "Proceed to Checkout"
+  },
+  "ProductFilter": {
+    "filters": "Filters",
+    "searchProducts": "Search products...",
+    "selectCategories": "Select categories...",
+    "noProductsFound": "No products found",
+    "categories": "Categories",
+    "searchCategories": "Search categories...",
+    "noCategoriesFound": "No categories found",
+ 
+    "applyFilters": "Apply Filters",
+    "resetFilters": "Reset Filters"
+  },
+  "AboutUs": {
+    "companyName": "Oukra",
+    "title": "About Us",
+    "subtitle": "Oukra Company Pioneering Air Conditioning & Refrigeration Solutions \"Building a More Comfortable and Sustainable Future\"",
+    "vision": {
+      "title": "Our Vision",
+      "description": "To deliver innovative, sustainable climate-control solutions that exceed customer expectations"
+    },
+    "whyChoose": {
+      "title": "Why Choose Oukra?",
+      "points": [
+        "- 10+ Years of Expertise: Trusted solutions since 2013",
+        "- Strong Distribution: Reliable local and international logistics",
+        "- 24/7 Support: After-sales service and technical assistance",
+        "- Certified Quality"
+      ]
+    },
+    "operations": {
+      "title": "Our Operations",
+      "description": "Locally and Globally ✔ Full coverage across the world"
+    },
+    "expertise": {
+      "title": "Our Expertise",
+      "section1": {
+        "title": "Advanced Cooling Systems:",
+        "points": [
+          "- Central & ducted air conditioning units",
+          "- Commercial & industrial refrigeration solutions"
+        ]
+      },
+      "section2": {
+        "title": "Premium Spare Parts:",
+        "points": [
+          "- Import of high-quality refrigeration components",
+          "- End-to-end technical support and maintenance"
+        ]
+      }
+    }
+  },
+  "CTA": {
+    "companyName": "Oukra Company",
+    "title": "Contact Us",
+    "subtitle": "Founded in 2013, Oukra is a leading importer and exporter of cutting-edge air conditioning and refrigeration systems. We obtained our commercial trademark rights in 2015 , solidifying our commitment to *(quality, reliability, and innovation)."
+  },
+  "About": {
+    "title": "We Present Technology as an Art",
+    "subtitle": "About us:",
+    "subtitle1": "Shenzhen UKKO Electronic Co., Ltd. specializes in the research and development, manufacturing, and export trade of electrical components, acrylic panels, and other related products worldwide.",
+    "subtitle2": "FOur team of skilled professionals is committed to continuously improving ourselves and expanding our market reach since our establishment.",
+    "subtitle3": "We prioritize establishing a robust internal quality assurance system and obtaining quality certifications to ensure our customers receive top-notch products. We have forged strong trade partnerships with numerous clients over time.",
+     "button": "   Know More"
+  },
+  "Footer": {
+    "subtitle": "Through our own R&D, we are dedicated to manufacturing acrylic frames, connectors, copper components and PCBa, etc. to export in the whole world.",
+    "address":"Address",
+    "address1": "Room 309, Building 4, Liantang Industry Park, 48 Kangzheng Road, Longgang District, Shenzhen, China",
+    "info": "Info",
+    "latestBlog": "Latest Blog",
+    "links": {
+      "home": "Home",
+      "products": "Products",
+      "about": "About Us",
+      "contact": "Contact"
+    }
+  },
+   "Hero": {
+    "title1": " In Ukko, we present ",
+    "title2": "technology",
+    "title3": " as an",
+    "title4": "art",
+    "subtitle": "we are aiming to be one of the journeys of making the product from A to Z",
+    "contactus":"   Contact Us",
+    "aboutus":"     About Us"
+  },
+
+     "Services": {
+    "title1": " Ukko",
+    "title2": "Our Services",
+    "title3": " We aim to provide a product journey from the ground up."
+  },
+    "ServiceContent": {
+      "item1": {
+        "name": "User-Centric Design",
+        "designation": "Founder @ Rolex",
+        "content": "We prioritize user-centric design, ensuring user needs and preferences dictate our design process. This approach involves understanding user requirements, robust research, and continuous feedback integration, leading to products that are both functional and optimized for user experience."
+      },
+      "item2": {
+        "name": "Development of Customer Products",
+        "designation": "Founder @ UI Hunter",
+        "content": "UKKO-CO is dedicated to creating outstanding products, a commitment that originates from their state-of-the-art laboratories. Their expert team conducts rigorous evaluations of existing products, pinpointing their strengths and areas of improvement."
+      },
+      "item3": {
+        "name": "Offer Free Samples for Trial",
+        "designation": "Founder @ Trorex",
+        "content": "We embody unparalleled excellence in every product we create. Rather than just highlighting their quality, we emphasize hands-on experience by offering free samples to potential customers, giving a tangible taste of our superior standards across diverse products like skincare and dietary supplements."
+      }
+    }
+
+    ,
+   "CatalogSection": {
+    "download":"download",
+    "brand": "Oukra",
+    "title": "TOP CATALOGS",
+    "description": "We prioritize quality to provide you with exceptional products that stand the test of time."
+  }
+}
