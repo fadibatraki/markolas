@@ -80,9 +80,10 @@ export default async function RootLayout({
           <div className="flex min-h-screen flex-col">
             <Header products={products} categories={categories} />
             <Hero1 />
+            
             <Hero />
-            <PromoBanner />
-            <Newsletter />
+            
+         <PromoBanner />
             <main className="flex-1">
               <section className="overflow-hidden pb-16.5 ">
                 <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0 pb-15 border-b border-gray-3">
@@ -96,14 +97,16 @@ export default async function RootLayout({
                 </div>
               </section>
             </main>
-             <div >
-            <CatalogCard catalogs={catalogs} />
-            </div>
+            <Newsletter />
+            
+            
             <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0 pb-15 border-b border-gray-3 pt-15">
               <Testimonials />
                   <Countdown />
             </div>
-           
+            <div >
+            <CatalogCard catalogs={catalogs} />
+            </div>
             <Footer />
           </div>
         </NextIntlClientProvider>
