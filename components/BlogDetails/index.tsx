@@ -11,13 +11,7 @@ const BlogDetails = () => {
       <section className="overflow-hidden py-20 bg-gray-2">
         <div className="max-w-[750px] w-full mx-auto px-4 sm:px-8 xl:px-0">
           <div className="rounded-[10px] overflow-hidden mb-7.5">
-            <Image
-              className="rounded-[10px]"
-              src="/images/blog/blog-details-01.jpg"
-              alt="details"
-              width={750}
-              height={477}
-            />
+          
           </div>
 
           <div>

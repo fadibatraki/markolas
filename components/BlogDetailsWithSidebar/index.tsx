@@ -3,7 +3,7 @@ import Breadcrumb from "../Common/Breadcrumb";
 import SearchForm from "../Blog/SearchForm";
 import LatestPosts from "../Blog/LatestPosts";
 import LatestProducts from "../Blog/LatestProducts";
-import blogData from "../BlogGrid/blogData";
+
 import Image from "next/image";
 
 
@@ -21,13 +21,7 @@ const BlogDetailsWithSidebar = () => {
             {/* <!-- blog details --> */}
             <div className="lg:max-w-[750px] w-full">
               <div className="rounded-[10px] overflow-hidden mb-7.5">
-                <Image
-                  className="rounded-[10px]"
-                  src="/images/blog/blog-details-01.jpg"
-                  alt="details"
-                  width={750}
-                  height={477}
-                />
+               
               </div>
 
               <div>
@@ -270,7 +264,7 @@ const BlogDetailsWithSidebar = () => {
               <SearchForm />
 
               {/* <!-- Recent Posts box --> */}
-              <LatestPosts blogs={blogData} />
+             
 
               {/* <!-- Latest Products box --> */}
             
