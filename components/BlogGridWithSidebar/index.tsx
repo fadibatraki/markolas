@@ -1,7 +1,7 @@
 import React from "react";
 import Breadcrumb from "../Common/Breadcrumb";
 import BlogItem from "../Blog/BlogItem";
-import blogData from "../BlogGrid/blogData"; 
+
 import SearchForm from "../Blog/SearchForm"; 
 import LatestPosts from "../Blog/LatestPosts";
 import LatestProducts from "../Blog/LatestProducts";
@@ -38,11 +38,7 @@ const BlogGridWithSidebar: React.FC = () => {
           <div className="flex flex-col lg:flex-row gap-7.5">
             {/* blog grid */}
             <div className="lg:max-w-[770px] w-full">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-10 gap-x-7.5">
-                {blogData.map((blog, key) => (
-                  <BlogItem blog={blog} key={key} />
-                ))}
-              </div>
+              
 
               {/* Blog Pagination Start */}
               <div className="flex justify-center mt-15">
@@ -169,8 +165,6 @@ const BlogGridWithSidebar: React.FC = () => {
               <SearchForm />
 
               {/* Recent Posts box */}
-              <LatestPosts blogs={blogData} />
-
            
               {/* Popular Category box */}
              <Categories categories={categories.map(cat => cat.name)} />
