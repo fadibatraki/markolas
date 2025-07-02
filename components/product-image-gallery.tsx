@@ -19,7 +19,21 @@ export function ProductImageGallery({ images, alt }: ProductImageGalleryProps) {
 
   return (
     <div className="grid gap-4">
-      <div className="aspect-square overflow-hidden rounded-lg bg-gray-100">
+      <div className="w-full max-w-full md:max-w-[500px] lg:max-w-[600px] mx-auto aspect-square overflow-hidden rounded-lg bg-gray-100 shadow-lg">
+        <div className="relative w-full h-full">
+          {/* Mobile: Disable magnifier below md breakpoint */}
+          <div className="md:hidden">
+            <img
+              src={imageList[selectedImage] || "/placeholder.svg"}
+              alt={`${alt} - Image ${selectedImage + 1}`}
+              className="w-full h-full object-contain"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Desktop: Show magnifier */}
+      <div className="hidden md:block">
         <ImageMagnifier
           src={imageList[selectedImage] || "/placeholder.svg"}
           alt={`${alt} - Image ${selectedImage + 1}`}

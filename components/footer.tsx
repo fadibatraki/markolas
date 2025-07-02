@@ -5,8 +5,8 @@ export default function Footer() {
   return (
     <footer
       id="footer"
-      className="wow fadeInUp relative z-10 bg-cover bg-black/20 bg-blend-overlay bg-center bg-no-repeat pt-20 lg:pt-[100px]"
-      style={{ backgroundImage: "url('/images/shapes/bg11.jpg')" }}
+      className="wow fadeInUp relative z-10 bg-cover bg-black/70 bg-blend-overlay bg-center bg-no-repeat pt-20 lg:pt-[100px]"
+      style={{ backgroundImage: "url('/images/hero/bg33.png')" }}
       data-wow-delay=".15s"
     >
       <div className="container">
@@ -147,41 +147,60 @@ export default function Footer() {
                 {t("latestBlog")}
               </h4>
               <div className="flex flex-col gap-3">
-                <a
-                  href="tel:008675525894470"
+                <div
+                  
                   className="group flex items-center gap-[15px]"
                 >
                   <div className="overflow-hidden rounded">
                     <img
-                      className="w-20 h-25"
-                      src="/assets/img/footer/1.png"
+                      className="w-15 h-20"
+                      src="/images/hero/1.png"
                       alt="blog"
                     />
                   </div>
                   <div className="overflow-hidden rounded">
                     <img
-                      className="w-20 h-25"
-                      src="/assets/img/footer/2.png"
+                      className="w-15 h-20"
+                        src="/images/hero/2.png"
                       alt="blog"
                     />
                   </div>
                   <div className="overflow-hidden rounded">
                     <img
-                      className="w-20 h-25"
-                      src="/assets/img/footer/3.png"
+                      className="w-15 h-20"
+                         src="/images/hero/11.png"
                       alt="blog"
                     />
                   </div>
-                </a>
+                </div>
 
-                <a
-                  href="tel:008675525894470"
+<div
+                  
                   className="group flex items-center gap-[15px]"
                 >
-              
-                
-                
-                </a>
+                  <div className="overflow-hidden rounded">
+                    <img
+                      className="w-15 h-20"
+                      src="/images/hero/12.png"
+                      alt="blog"
+                    />
+                  </div>
+                  <div className="overflow-hidden rounded">
+                    <img
+                      className="w-15 h-20"
+                        src="/images/hero/6.png"
+                      alt="blog"
+                    />
+                  </div>
+                  <div className="overflow-hidden rounded">
+                    <img
+                      className="w-15 h-20"
+                         src="/images/hero/5.png"
+                      alt="blog"
+                    />
+                  </div>
+                </div>
+               
               </div>
             </div>
           </div>

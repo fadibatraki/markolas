@@ -3,106 +3,114 @@ import Image from "next/image";
 
 const PromoBanner = () => {
   return (
-    <section className="overflow-hidden py-20 ">
-      <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0">
-        {/* <!-- promo banner big --> */}
-        <div className="relative z-1 overflow-hidden rounded-lg bg-[#F5F5F7] py-12.5 lg:py-17.5 xl:py-22.5 px-4 sm:px-7.5 lg:px-14 xl:px-19 mb-7.5">
-          <div className="max-w-[550px] w-full">
-            <span className="block font-medium text-xl text-dark mb-3">
-              Apple iPhone 14 Plus
+    <section className="overflow-hidden py-12 sm:py-16">
+      <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-6 xl:px-0 flex flex-col gap-8">
+
+        {/* Big promo banner */}
+        <div className="flex flex-col lg:flex-row items-center rounded-lg bg-[#F5F5F7] overflow-hidden p-6 sm:p-8 lg:p-12 gap-6 lg:gap-12">
+          <div className="flex-1">
+            <span className="block font-medium text-lg sm:text-xl text-dark mb-2">
+              About Markolas
             </span>
-
-            <h2 className="font-bold text-xl lg:text-heading-4 xl:text-heading-3 text-dark mb-5">
-              UP TO 30% OFF
+            <h2 className="font-bold text-2xl sm:text-3xl lg:text-4xl text-dark mb-4">
+              Markolas – The Signature of Quality.
             </h2>
+            <p className="text-base sm:text-lg text-dark">
+              At Markolas, we believe mobile accessories should do more than just work — they should last. Born from a vision to merge markable quality with fabulous functionality, Markolas is a brand built for people who care about what powers their everyday life.
+              <br></br>
+              Our focus is simple:<br></br>
+              •	Only real specifications.<br></br>
+              •	Only tested, high-performance components.<br></br>
+              •	Only long-lasting, reliable products.<br></br>
 
-            <p>
-              iPhone 14 has the same superspeedy chip that’s in iPhone 13 Pro,
-              A15 Bionic, with a 5‑core GPU, powers all the latest features.
-            </p>
+              Whether it’s a power bank that holds strong for years or a cable that doesn’t give out after a month, we design every product to earn your trust over time. We don’t do gimmicks — just smart, solid accessories that get the job done and stand the test of time.
 
+              Markolas is more than a name. It’s our mark of quality.   </p>
             <a
               href="#"
-              className="inline-flex font-medium text-custom-sm text-white bg-blue py-[11px] px-9.5 rounded-md ease-out duration-200 hover:bg-blue-dark mt-7.5"
+              className="inline-flex font-medium text-sm sm:text-base text-white bg-blue py-3 px-6 rounded-md transition duration-200 hover:bg-blue-dark mt-6"
             >
               Buy Now
             </a>
           </div>
-
-          <Image
-            src="/images/promo/promo-01.png"
-            alt="promo img"
-            className="absolute bottom-0 right-4 lg:right-26 -z-1"
-            width={274}
-            height={350}
-          />
+          <div className="flex-shrink-0 w-full sm:w-auto max-w-[200px] mx-auto lg:mx-0">
+            <Image
+              src="/images/hero/6.png"
+              alt="iPhone promo"
+              className="w-full h-auto"
+              width={300}
+              height={400}
+              priority
+            />
+          </div>
         </div>
 
-        <div className="grid gap-7.5 grid-cols-1 lg:grid-cols-2">
-          {/* <!-- promo banner small --> */}
-          <div className="relative z-1 overflow-hidden rounded-lg bg-[#DBF4F3] py-10 xl:py-16 px-4 sm:px-7.5 xl:px-10">
-            <Image
-              src="/images/promo/promo-02.png"
-              alt="promo img"
-              className="absolute top-1/2 -translate-y-1/2 left-3 sm:left-10 -z-1"
-              width={241}
-              height={241}
-            />
+        {/* Small promos in grid */}
+        <div className="grid gap-8 grid-cols-1 lg:grid-cols-2">
 
-            <div className="text-right">
-              <span className="block text-lg text-dark mb-1.5">
-                Foldable Motorised Treadmill
+          {/* Small promo 1 */}
+          <div className="flex flex-col-reverse sm:flex-row items-center rounded-lg bg-[#a6adb1] overflow-hidden p-6 sm:p-8 gap-6">
+            <div className="flex-1 text-right sm:text-left">
+              <span className="block text-base sm:text-lg text-dark mb-1.5">
+                Markolas Dual USB & Type-C Fast Charging Head
               </span>
-
-              <h2 className="font-bold text-xl lg:text-heading-4 text-dark mb-2.5">
-                Workout At Home
+              <h2 className="font-bold text-xl sm:text-2xl lg:text-3xl text-dark mb-2">
+                Dual-Port Fast Charger
               </h2>
-
-              <p className="font-semibold text-custom-1 text-teal">
-                Flat 20% off
+              <p className="font-semibold text-base text-dark">
+                Up to 20% off
               </p>
-
               <a
                 href="#"
-                className="inline-flex font-medium text-custom-sm text-white bg-teal py-2.5 px-8.5 rounded-md ease-out duration-200 hover:bg-teal-dark mt-9"
+                className="inline-flex font-medium text-sm sm:text-base text-white bg-blue py-3 px-6 rounded-md transition duration-200 hover:bg-orange-dark mt-6"
               >
-                Grab Now
+                Buy Now
               </a>
+            </div>
+            <div className="flex-shrink-0 w-full sm:w-auto max-w-[200px] mx-auto sm:mx-0">
+              <Image
+                src="/images/hero/11.png"
+                alt="treadmill promo"
+                className="w-full h-auto"
+                width={200}
+                height={200}
+                priority
+              />
             </div>
           </div>
 
-          {/* <!-- promo banner small --> */}
-          <div className="relative z-1 overflow-hidden rounded-lg bg-[#FFECE1] py-10 xl:py-16 px-4 sm:px-7.5 xl:px-10">
-            <Image
-              src="/images/promo/promo-03.png"
-              alt="promo img"
-              className="absolute top-1/2 -translate-y-1/2 right-3 sm:right-8.5 -z-1"
-              width={200}
-              height={200}
-            />
+          {/* Small promo 2 */}
+          <div className="flex flex-col sm:flex-row items-center rounded-lg bg-[#f0810a] overflow-hidden p-6 sm:p-8 gap-6">
+            <div className="flex-shrink-0 w-full sm:w-auto max-w-[200px] mx-auto sm:mx-0">
 
-            <div>
-              <span className="block text-lg text-dark mb-1.5">
-                Apple Watch Ultra
+              <Image
+                src="/images/hero/12.png"
+                alt="watch promo"
+                className="w-full h-auto"
+                width={200}
+                height={200}
+                priority
+              />
+            </div>
+            <div className="flex-1">
+              <span className="block text-base sm:text-lg text-dark mb-1.5">
+                Markolas Dual USB & Type-C Fast Charging Head
               </span>
-
-              <h2 className="font-bold text-xl lg:text-heading-4 text-dark mb-2.5">
-                Up to <span className="text-orange">40%</span> off
+              <h2 className="font-bold text-xl sm:text-2xl lg:text-3xl text-dark mb-2">
+                Up to <span className="text-bold">30%</span> off
               </h2>
-
-              <p className="max-w-[285px] text-custom-sm">
-                The aerospace-grade titanium case strikes the perfect balance of
-                everything.
+              <p className="text-sm sm:text-base text-dark max-w-[285px]">
+                Dual-Port Fast Charger
               </p>
-
               <a
                 href="#"
-                className="inline-flex font-medium text-custom-sm text-white bg-orange py-2.5 px-8.5 rounded-md ease-out duration-200 hover:bg-orange-dark mt-7.5"
+                className="inline-flex font-medium text-sm sm:text-base text-white bg-[#a6adb1] py-2.5 px-6 rounded-md transition duration-200 hover:bg-orange-dark mt-4"
               >
                 Buy Now
               </a>
             </div>
           </div>
+
         </div>
       </div>
     </section>
