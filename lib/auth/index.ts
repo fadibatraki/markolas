@@ -15,6 +15,6 @@ export const auth = betterAuth({
 
   trustedOrigins: [
     "http://178.18.248.22",          // الـ IP المباشر
-    "https://www.ukko-co.com",      // الدومين الفعلي
+    "https://www.markolas.tech",      // الدومين الفعلي
   ],
 });

@@ -19,7 +19,7 @@ export function ProductImageGallery({ images, alt }: ProductImageGalleryProps) {
 
   return (
     <div className="grid gap-4">
-      <div className="w-full max-w-full md:max-w-[500px] mx-auto  lg:max-w-[600px] overflow-hidden rounded-lg bg-gray-100 shadow-lg">
+      <div className="w-full max-w-full md:max-w-[500px] mx-auto aspect-square lg:max-w-[600px] overflow-hidden rounded-lg bg-gray-100 shadow-lg">
         <div className="relative w-full h-full">
           {/* Mobile: Disable magnifier below md breakpoint */}
           <div className="md:hidden">

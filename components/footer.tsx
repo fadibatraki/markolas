@@ -23,7 +23,7 @@ export default function Footer() {
                   className="max-w-full"
                 /> */}
             <h4 className="mb-0 text-lg font-semibold text-white">
-               UKKO
+               Markolas
               </h4>
               </a>
               <p className="mb-8 max-w-[290px] text-base text-white">
@@ -130,11 +130,11 @@ export default function Footer() {
 
 
                 <a
-                  href="mailto:info@ukko-co.com"
+                  href="mailto:info@markolas.com"
                   className="group flex items-center gap-[22px] mb-2"
                 >
                   <span className="max-w-[280px] text-base text-gray-7 group-hover:text-white">
-                    Email: info@ukko-co.com
+                    Email: info@markolas.com
                   </span>
                 </a>
               </div>
