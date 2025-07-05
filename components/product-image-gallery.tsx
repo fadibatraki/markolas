@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { ImageMagnifier } from "./image-magnifier";
 import { cn } from "@/lib/utils";
 
 interface ProductImageGalleryProps {
@@ -13,42 +12,31 @@ interface ProductImageGalleryProps {
 export function ProductImageGallery({ images, alt }: ProductImageGalleryProps) {
   const [selectedImage, setSelectedImage] = useState(0);
 
-  // Use default image if no images are provided
+  // استخدم صورة افتراضية إذا لم تتوفر صور
   const imageList =
     images.length > 0 ? images : ["/placeholder.svg?height=600&width=600"];
 
   return (
     <div className="grid gap-4">
-      <div className="md:max-w-[500px] lg:max-w-[600px] overflow-hidden rounded-lg bg-gray-100 shadow-lg">
-        <div className="relative w-full h-full">
-          {/* Mobile: Disable magnifier below md breakpoint */}
-          <div className="md:hidden">
-            <img
-              src={imageList[selectedImage] || "/placeholder.svg"}
-              alt={`${alt} - Image ${selectedImage + 1}`}
-              className="w-full h-full object-contain"
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* Desktop: Show magnifier */}
-      <div className="hidden md:block">
-        <ImageMagnifier
+      {/* الصورة الرئيسية */}
+      <div className="w-full aspect-square overflow-hidden rounded-lg bg-gray-100 relative">
+        <Image
           src={imageList[selectedImage] || "/placeholder.svg"}
           alt={`${alt} - Image ${selectedImage + 1}`}
-          width={600}
-          height={600}
+          fill
+          className="object-contain"
         />
       </div>
 
+      {/* الصور المصغرة في الأسفل إذا كانت أكثر من صورة */}
       {imageList.length > 1 && (
-        <div className="flex space-x-2 overflow-x-auto pb-2">
+        <div className="flex space-x-2 overflow-x-auto pb-2 snap-x snap-mandatory">
           {imageList.map((image, index) => (
             <button
               key={index}
               className={cn(
-                "relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-md border",
+                "relative flex-shrink-0 overflow-hidden rounded-md border snap-start",
+                "h-16 w-16 sm:h-20 sm:w-20",
                 selectedImage === index ? "border-primary" : "border-gray-200",
               )}
               onClick={() => setSelectedImage(index)}
