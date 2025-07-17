@@ -49,7 +49,7 @@ export default function Header({
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur">
+    <header className="text-white sticky top-0 z-50 w-full bg-gradient-to-br from-[#2e3334] via-[#4f5759] to-[#2e3334] backdrop-blur">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
@@ -69,10 +69,10 @@ export default function Header({
                   key={item.href + item.name}
                   href={item.href}
                   className={cn(
-                    "text-sm font-medium transition-colors hover:text-primary capitalize",
+                    "text-sm text-white font-medium transition-colors hover:text-white capitalize",
                     pathname === item.href
-                      ? "text-primary"
-                      : "text-muted-foreground",
+                      ? "text-white"
+                      : "text-white",
                   )}
                 >
                   {item.name}
@@ -81,11 +81,11 @@ export default function Header({
             </nav>
           </div>
 
-          <div className="relative w-64">
-            <Search className="absolute -left-3 top-3 h-4 w-4 text-muted-foreground" />
+          <div className=" text-white relative w-64 ">
+            <Search className="text-white absolute -left-3 top-3 h-4 w-4 " />
             <Input
               placeholder={t("searchProducts")}
-              className="pl-3 pr-3 border-none"
+             className="bg-transparent text-white placeholder:text-white border-none focus-visible:ring-0 focus-visible:ring-offset-0"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
@@ -138,10 +138,10 @@ export default function Header({
                 key={item.href + item.name}
                 href={item.href}
                 className={cn(
-                  "block text-sm font-medium transition-colors hover:text-primary capitalize",
+                  "block text-sm font-medium transition-colors hover:text-white capitalize",
                   pathname === item.href
-                    ? "text-primary"
-                    : "text-muted-foreground",
+                    ? "text-white"
+                    : "text-white",
                 )}
                 onClick={() => setIsMenuOpen(false)}
               >

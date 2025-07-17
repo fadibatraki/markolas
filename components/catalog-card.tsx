@@ -48,19 +48,19 @@ const CatalogCard = ({ catalogs }: { catalogs: Catalog[] }) => {
   return (
     <section
       id="catalogs"
-      className="overflow-hidden  py-20  md:py-[120px]"
+      className="overflow-hidden  py-20  md:py-[120px] bg-gradient-to-br from-[#a5adaf] via-[#a5adaf] to-[#a5adaf]"
     >
-      <div className="container mx-auto">
+      <div className="container mx-auto text-white">
         <div className="-mx-4 flex flex-wrap justify-center">
           <div className="w-full px-4">
             <div className="mx-auto mb-[60px] max-w-[485px] text-center">
-             <span className="mb-2 block text-lg font-semibold text-primary">
+             <span className="mb-2 block text-lg font-semibold text-white">
                 {t("brand")}
               </span>
-              <h2 className="mb-3 text-3xl font-bold leading-[1.2] text-black dark:text-white sm:text-4xl md:text-[40px]">
+              <h2 className="mb-3 text-3xl font-bold leading-[1.2] text-black text-white sm:text-4xl md:text-[40px]">
                 {t("title")}
               </h2>
-              <p className="text-base text-gray-700 dark:text-gray-400">
+              <p className="text-base text-white dark:text-gray-400">
                 {t("description")}
               </p>
             </div>

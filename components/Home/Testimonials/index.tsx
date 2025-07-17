@@ -1,112 +1,181 @@
-"use client";
+"use client"
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import type { Swiper as SwiperClass } from "swiper";
-import { useCallback, useRef } from "react";
-import testimonialsData from "./testimonialsData";
-import SingleItem from "./SingleItem";
+import Image from "next/image"
+import { Swiper, SwiperSlide } from "swiper/react"
+import type { Swiper as SwiperClass } from "swiper"
+import { useCallback, useRef, useId } from "react"
+import { ChevronLeft, ChevronRight, MessageSquareText, Star } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
 
-import "swiper/css/navigation";
-import "swiper/css";
+import "swiper/css"
+import "swiper/css/navigation"
 
-const Testimonials = () => {
-  // تعريف ref بنوع SwiperClass أو null
-  const sliderRef = useRef<SwiperClass | null>(null);
+interface Testimonial {
+  review: string
+  authorName: string
+  authorImg: string
+  authorRole: string
+}
 
-  const handlePrev = useCallback(() => {
-    sliderRef.current?.slidePrev();
-  }, []);
+const testimonialsData: Testimonial[] = [
+  {
+    review: `The power bank I bought charges my phone super fast and lasts forever. I’ve never been this confident traveling with my phone!`,
+    authorName: "Hannah Collins",
+    authorImg: "/images/users/user-01.jpg",
+    authorRole: "Travel Blogger",
+  },
+  {
+    review: `Finally found charging cables that don’t break after a month. Excellent quality and quick charging. Highly recommended!`,
+    authorName: "Ryan Patel",
+    authorImg: "/images/users/user-02.jpg",
+    authorRole: "Software Engineer",
+  },
+  {
+    review: `I needed reliable memory cards for my camera. These cards have great speed and never failed me during shoots.`,
+    authorName: "Aisha Thompson",
+    authorImg: "/images/users/user-03.jpg",
+    authorRole: "Professional Photographer",
+  },
+  {
+    review: `Fast shipping and the chargers work perfectly with both my iPhone and Android devices. Will definitely buy again.`,
+    authorName: "Lucas Meyer",
+    authorImg: "/images/users/user-01.jpg",
+    authorRole: "E-commerce Consultant",
+  },
+  {
+    review: `The build quality of the cables and power banks is top-notch. Feels premium, and the prices are unbeatable!`,
+    authorName: "Isabella Rossi",
+    authorImg: "/images/users/user-02.jpg",
+    authorRole: "Tech Reviewer",
+  },
+]
 
-  const handleNext = useCallback(() => {
-    sliderRef.current?.slideNext();
-  }, []);
-
+const GradientStar = ({ size = 20 }: { size?: number }) => {
+  const gradientId = useId()
   return (
-    <section className="overflow-hidden pb-16.5">
-      <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0">
-        <div className="">
-          <div className="swiper testimonial-carousel common-carousel p-5">
-            {/* section title */}
-            <div className="mb-10 flex items-center justify-between">
-              <div>
-                <span className="flex items-center gap-2.5 font-medium text-dark mb-1.5">
-                  <img
-                    src="/images/icons/icon-08.svg"
-                    alt="icon"
-                    width={17}
-                    height={17}
-                  />
-                  Testimonials
-                </span>
-                <h2 className="font-semibold text-xl xl:text-heading-5 text-dark">
-                  User Feedbacks
-                </h2>
-              </div>
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+      <defs>
+        <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#f0810b" />
+          <stop offset="50%" stopColor="#f35c0d" />
+          <stop offset="100%" stopColor="#f92524" />
+        </linearGradient>
+      </defs>
+      <Star
+        width={size}
+        height={size}
+        fill={`url(#${gradientId})`}
+        stroke={`url(#${gradientId})`}
+      />
+    </svg>
+  )
+}
 
-              <div className="flex items-center gap-3">
-                <div className="flex items-center gap-3">
-                  <div onClick={handlePrev} className="swiper-button-prev">
-                    <svg
-                      className="fill-current"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M15.4881 4.43057C15.8026 4.70014 15.839 5.17361 15.5694 5.48811L9.98781 12L15.5694 18.5119C15.839 18.8264 15.8026 19.2999 15.4881 19.5695C15.1736 19.839 14.7001 19.8026 14.4306 19.4881L8.43056 12.4881C8.18981 12.2072 8.18981 11.7928 8.43056 11.5119L14.4306 4.51192C14.7001 4.19743 15.1736 4.161 15.4881 4.43057Z"
-                        fill=""
-                      />
-                    </svg>
-                  </div>
-
-                  <div onClick={handleNext} className="swiper-button-next">
-                    <svg
-                      className="fill-current"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M8.51192 4.43057C8.82641 4.161 9.29989 4.19743 9.56946 4.51192L15.5695 11.5119C15.8102 11.7928 15.8102 12.2072 15.5695 12.4881L9.56946 19.4881C9.29989 19.8026 8.82641 19.839 8.51192 19.5695C8.19743 19.2999 8.161 18.8264 8.43057 18.5119L14.0122 12L8.43057 5.48811C8.161 5.17361 8.19743 4.70014 8.51192 4.43057Z"
-                        fill=""
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <Swiper
-              onSwiper={(swiper) => {
-                sliderRef.current = swiper;
-              }}
-              slidesPerView={3}
-              spaceBetween={20}
-              breakpoints={{
-                0: { slidesPerView: 1 },
-                1000: { slidesPerView: 2 },
-                1200: { slidesPerView: 3 },
-              }}
-            >
-              {testimonialsData.map((item, key) => (
-                <SwiperSlide key={key}>
-                  <SingleItem testimonial={item} />
-                </SwiperSlide>
-              ))}
-            </Swiper>
+const SingleItem = ({ testimonial }: { testimonial: Testimonial }) => {
+  return (
+    <Card className="h-full flex flex-col bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
+      <CardContent className="flex-grow p-0">
+        <div className="flex items-center gap-1 mb-5">
+          {[...Array(5)].map((_, i) => (
+            <GradientStar key={i} size={16} />
+          ))}
+        </div>
+        <p className="text-gray-300 leading-relaxed mb-6">{testimonial.review}</p>
+        <div className="flex items-center gap-4 ">
+          <Image
+            src={testimonial.authorImg || "/placeholder.svg"}
+            alt={testimonial.authorName}
+            width={48}
+            height={48}
+            className="object-cover"
+          />
+          <div>
+            <h3 className="font-medium text-white">{testimonial.authorName}</h3>
+            <p className="text-sm text-gray-300">{testimonial.authorRole}</p>
           </div>
         </div>
+      </CardContent>
+    </Card>
+  )
+}
+
+const Testimonials = () => {
+  const sliderRef = useRef<SwiperClass | null>(null)
+
+  const handlePrev = useCallback(() => {
+    sliderRef.current?.slidePrev()
+  }, [])
+
+  const handleNext = useCallback(() => {
+    sliderRef.current?.slideNext()
+  }, [])
+
+  return (
+    <section className="relative  overflow-hidden bg-gradient-to-br from-[#a5adaf] via-[#4f5759] to-[#a5adaf]">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
+        <div className="mb-12 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex flex-col md:flex-row md:items-center md:gap-6">
+            <span className="inline-flex items-center justify-center px-4 py-2 bg-gradient-to-br from-[#f0810b] via-[#f35c0d] to-[#f92524] rounded-full border border-blue-500/30 backdrop-blur-sm mb-2 md:mb-0">
+              <MessageSquareText className="text-white w-4 h-4" />
+              <span className="text-white text-sm font-medium ml-2">Testimonials</span>
+            </span>
+            <h2 className="font-bold text-4xl lg:text-5xl text-white leading-tight">
+              What Our {" "}
+              <span className="bg-gradient-to-br from-[#f0810b] via-[#f35c0d] to-[#f92524] bg-clip-text text-transparent">
+                Customers
+              </span>{" "}
+              Say
+            </h2>
+          </div>
+          <div className="flex items-center gap-3">
+            <Button
+              variant="outline"
+              size="icon"
+              className="rounded-full w-10 h-10 bg-gradient-to-br from-[#f0810b] via-[#f35c0d] to-[#f92524] border border-white/20 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+              onClick={handlePrev}
+              aria-label="Previous testimonial"
+            >
+              <ChevronLeft className="w-5 h-5 text-white" />
+            </Button>
+            <Button
+              variant="outline"
+              size="icon"
+              className="rounded-full w-10 h-10 bg-gradient-to-br from-[#f0810b] via-[#f35c0d] to-[#f92524] border border-white/20 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+              onClick={handleNext}
+              aria-label="Next testimonial"
+            >
+              <ChevronRight className="w-5 h-5 text-white" />
+            </Button>
+          </div>
+        </div>
+        <Swiper
+          onSwiper={(swiper) => {
+            sliderRef.current = swiper
+          }}
+          slidesPerView={1}
+          spaceBetween={24}
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 24,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 24,
+            },
+          }}
+          className="pb-4"
+        >
+          {testimonialsData.map((item, key) => (
+            <SwiperSlide key={key}>
+              <SingleItem testimonial={item} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Testimonials;
+export default Testimonials

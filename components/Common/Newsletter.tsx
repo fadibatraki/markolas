@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Newsletter = () => {
   return (
-    <section className="overflow-hidden pt-10 pb-10">
+    <section className="overflow-hidden pt-10 pb-10 bg-gradient-to-br from-[#a5adaf] via-[#a5adaf] to-[#4f5759]">
       <div className="max-w-[1170px] mx-auto px-4 sm:px-6 xl:px-0">
         <div className="relative overflow-hidden rounded-xl bg-black/70"> {/* fallback bg for when image doesn't cover */}
           {/* Background image */}
@@ -28,7 +28,8 @@ const Newsletter = () => {
               </p>
             </div>
 
-            <div className="w-full sm:w-auto flex justify-start lg:justify-end">
+           <div className=" py-3 bg-gradient-to-br from-[#f0810b] via-[#f35c0d] to-[#f92524] text-white font-semibold rounded-xl  hover:[#f0810b] hover:scale-105">
+
               <button
                 type="button"
                 className="inline-flex justify-center w-full sm:w-auto py-3 px-6 text-white bg-blue font-medium rounded-md transition duration-200 hover:bg-blue-dark"

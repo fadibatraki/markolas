@@ -8,13 +8,13 @@ import {
   CarouselApi,
   CarouselContent,
   CarouselItem,
-  DotButton,
   useDotButton,
 } from "@/components/ui/carousel";
 import { EmblaCarouselType, EmblaEventType } from "embla-carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { Product } from "@/lib/types";
 import { Link } from "@/i18n/navigation";
+import gsap from "gsap";
 
 type HeroCarouselProps = {
   products: Product[];
@@ -26,8 +26,11 @@ export default function HeroCarousel({ products }: HeroCarouselProps) {
   const t = useTranslations("Hero");
   const [api, setApi] = React.useState<CarouselApi | undefined>();
   const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(api);
+
   const tweenFactor = useRef(0);
   const tweenNodes = useRef<HTMLElement[]>([]);
+  const itemsRef = useRef<HTMLDivElement[]>([]);
+  const rotatingImageRefs = useRef<(HTMLDivElement | null)[]>([]); // صور المنتجات لتأثير الدوران
 
   const setTweenNodes = useCallback((emblaApi: EmblaCarouselType): void => {
     tweenNodes.current = emblaApi.slideNodes().map((slideNode) => {
@@ -52,11 +55,9 @@ export default function HeroCarousel({ products }: HeroCarouselProps) {
         slidesInSnap.forEach((slideIndex) => {
           if (isScrollEvent && !slidesInView.includes(slideIndex)) return;
 
-          // تحديد المسافة إلى المنتصف بشكل دقيق
           const distanceToCenter = Math.abs(scrollSnap - scrollProgress);
-          const isCenter = distanceToCenter < 0.1; // إذا كان العنصر قريب جدا من المنتصف
-
-          const scale = isCenter ? "1.1" : "0.9"; // تكبير العنصر في المنتصف فقط
+          const isCenter = distanceToCenter < 0.1;
+          const scale = isCenter ? "1.1" : "0.9";
 
           const tweenNode = tweenNodes.current[slideIndex];
           tweenNode.style.transform = `scale(${scale})`;
@@ -67,6 +68,29 @@ export default function HeroCarousel({ products }: HeroCarouselProps) {
     [],
   );
 
+  // 🌀 تحريك عناصر الكاروسيل عند التبديل
+  useEffect(() => {
+    if (!api || !itemsRef.current.length) return;
+
+    const animateIn = () => {
+      gsap.fromTo(
+        itemsRef.current,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power3.out",
+          stagger: 0.1,
+        }
+      );
+    };
+
+    animateIn();
+    api.on("select", animateIn).on("reInit", animateIn);
+  }, [api]);
+
+  // إعداد Embla الأساسي
   useEffect(() => {
     if (!api) return;
 
@@ -82,13 +106,38 @@ export default function HeroCarousel({ products }: HeroCarouselProps) {
       .on("slideFocus", tweenScale);
   }, [api, tweenScale]);
 
+  // 🌀 دوران الصورة + حركة الإضاءة اللامعة
+  useEffect(() => {
+    rotatingImageRefs.current.forEach((el) => {
+      if (el) {
+        // دوران الصورة حول المحور Y باستمرار
+        gsap.to(el, {
+          rotateY: 360,
+          duration: 10,
+          ease: "linear",
+          repeat: -1,
+          transformOrigin: "center center",
+        });
+
+        // حركة الإضاءة اللامعة
+        const shine = el.querySelector(".shine-overlay");
+        if (shine) {
+          gsap.to(shine, {
+            x: "200%", // تحريك الإضاءة من اليسار لليمين
+            duration: 2,
+            ease: "power2.inOut",
+            repeat: -1,
+            yoyo: true,
+          });
+        }
+      }
+    });
+  }, []);
+
   return (
-    <section
-      id="home">
-      <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0 pb-15 border-b border-gray-3">
-
+    <section id="home" className="bg-gradient-to-br from-[#4f5759] via-[#a5adaf] to-[#a5adaf]">
+      <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0 pb-15 ">
         <div className="w-full px-4 pt-10">
-
           <div className="mb-10 flex items-center justify-between">
             <div>
               <span className="flex items-center gap-2.5 font-medium text-dark mb-1.5">
@@ -132,36 +181,45 @@ export default function HeroCarousel({ products }: HeroCarouselProps) {
                 Browse by Category
               </h2>
             </div>
-            
-
-
           </div>
+
           <div className="mt-0">
             <Carousel
               setApi={setApi}
               className="w-full"
-              plugins={[
-                Autoplay({
-                  delay: 3000,
-                }),
-              ]}
+              plugins={[Autoplay({ delay: 3000 })]}
             >
               <CarouselContent>
-                {products.map((product) => (
+                {products.map((product, index) => (
                   <CarouselItem
                     key={product.id}
                     className="relative basis-1/2 md:basis-1/6"
+                    ref={(el) => {
+                      if (el) itemsRef.current[index] = el;
+                    }}
                   >
-                    <Link href={`/products/${product.id}`} className="group flex flex-col items-center">
-                      <div className="max-w-[130px] w-full bg-[#F2F3F8] h-32.5 rounded-full flex items-center justify-center mb-4">
+                    <Link
+                      href={`/products/${product.id}`}
+                      className="group flex flex-col items-center"
+                    >
+                      <div
+                        className="relative max-w-[130px] w-full bg-gradient-to-br from-[#f0810b] via-[#f35c0d] to-[#f92524] h-32.5 rounded-full flex items-center justify-center mb-4 overflow-hidden"
+                        ref={(el) => {
+                          if (el) {
+                            rotatingImageRefs.current[index] = el;
+                            itemsRef.current[index] = el; // هذا العنصر يدعم ref
+                          }
+                        }}
+                      >
                         <Image
-                          className="object-contain mx-auto"
+                          className="object-contain mx-auto will-change-transform z-[1]"
                           src={product.images[0].url}
                           alt={product.name}
                           width={500}
                           height={500}
                           priority
                         />
+                        <div className="shine-overlay absolute inset-0 z-[2] pointer-events-none" />
                       </div>
                       <div className="flex justify-center">
                         <h3 className="inline-block font-medium text-center text-dark bg-gradient-to-r from-blue to-blue bg-[length:0px_1px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_1px] group-hover:text-blue">
@@ -174,20 +232,21 @@ export default function HeroCarousel({ products }: HeroCarouselProps) {
               </CarouselContent>
             </Carousel>
           </div>
-
         </div>
       </div>
+
+      {/* CSS للإضاءة اللامعة */}
+      <style jsx>{`
+        .shine-overlay {
+          background: linear-gradient(
+            120deg,
+            rgba(255, 255, 255, 0) 20%,
+            rgba(255, 255, 255, 0.3) 50%,
+            rgba(255, 255, 255, 0) 80%
+          );
+          transform: translateX(-100%);
+        }
+      `}</style>
     </section>
   );
 }
-
-
-
-
-
-
-
-
-
-
-

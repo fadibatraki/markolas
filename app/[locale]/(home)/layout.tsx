@@ -1,7 +1,4 @@
-import "../../css/style.css";
-import "../../css/async-gallery.css";
-import "../../css/euclid-circular-a-font.css";
-import "../../css/globals1.css";
+
 import type React from "react";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
@@ -74,7 +71,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <body>
+      <body >
         <NextIntlClientProvider>
           <div className="flex min-h-screen flex-col">
             <Header products={products} categories={categories} />
@@ -83,9 +80,9 @@ export default async function RootLayout({
             <Hero />
             
          <PromoBanner />
-            <main className="flex-1">
+            <main className="flex-1 bg-gradient-to-br from-[#a5adaf] via-[#a5adaf] to-[#a5adaf]">
               <section className="overflow-hidden pb-16.5 ">
-                <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0 pb-15 border-b border-gray-3">
+                <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0 pb-15 ">
                   <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0">
                     <div className="">
                       <div className="swiper testimonial-carousel common-carousel p-5">
@@ -99,10 +96,9 @@ export default async function RootLayout({
             <Newsletter />
             
             
-            <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0 pb-15 border-b border-gray-3 pt-15">
-              <Testimonials />
+               <Testimonials />
                   <Countdown />
-            </div>
+          
             <div >
             <CatalogCard catalogs={catalogs} />
             </div>
