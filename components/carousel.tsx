@@ -68,27 +68,8 @@ export default function HeroCarousel({ products }: HeroCarouselProps) {
     [],
   );
 
-  // 🌀 تحريك عناصر الكاروسيل عند التبديل
-  useEffect(() => {
-    if (!api || !itemsRef.current.length) return;
 
-    const animateIn = () => {
-      gsap.fromTo(
-        itemsRef.current,
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power3.out",
-          stagger: 0.1,
-        }
-      );
-    };
 
-    animateIn();
-    api.on("select", animateIn).on("reInit", animateIn);
-  }, [api]);
 
   // إعداد Embla الأساسي
   useEffect(() => {
